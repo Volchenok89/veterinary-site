@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://the-veterinary-clinic.herokuapp.com";
 
 module.exports = {
     baseUrl: baseUrl
