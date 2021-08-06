@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{!-- fonts --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{baseUrl}}/css/style.css"/>
+    <title>{{title}}</title>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-logo">
+                <img src="/images/logo.png"/>
+                <h1>Veterinary Clinic</h1>
+            </div>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li>
+                        <a href="/" class="{{#ifEquals view "home"}} active {{/ifEquals}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about-us" class="{{#ifEquals view "aboutUs"}} active {{/ifEquals}}">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/services" class="{{#ifEquals view "services"}} active {{/ifEquals}}">Services</a>
+                    </li>
+                    <li>
+                        <a href="/pharmacy" class="{{#ifEquals view "pharmacy"}} active {{/ifEquals}}">Online Pharmacy</a>
+                    </li>
+                    <li>
+                        <a href="/contact-us" class="{{#ifEquals view "contactUs"}} active {{/ifEquals}}">Contact Us</a>
+                    </li>
+                    {{#if isAdmin}}
+                        <li>
+                            <a href="/admin/logout">Logout</a>
+                        </li>
+                    {{/if}}
+                </ul>
+                <img class="cart-btn" src="{{baseURL}}/images/cart.png"/>
+            </div>
+        </div>
+    </nav>
+
+    {{!-- Cart Modal --}}
+    <div id="cart-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cart</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Product Price</th>
+                                <th>Product Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-tbody">
+
+                        </tbody>
+                    </table>
+
+                    <br/><br/>
+                    <label>Shipping Address</label>
+                    <br/>
+                    <input id="shipping-address" type="text">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" id="checkout-btn">Checkout</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {{!-- Book appointment modal --}}
+    <div id="appointmen-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Book an Appointment</h4>
+                </div>
+                <div class="modal-body" style="display: flex; justify-content: center">
+                    <form class="contact-form">
+                        <select id="pet-type">
+                            <option>Cat</option>
+                            <option>Dog</option>
+                            <option>Bird</option>
+                        </select>
+
+                        <input type="date" id="appointment-date"/>
+
+                        <input type="time" id="appointment-time">
+
+                        <textarea placeholder="Some Detail" id="appointment-detail"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" id="book-appointment-btn">Done</button>
+                </div>
+            </div>
+
+        </div>
+    </div>

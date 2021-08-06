@@ -1,0 +1,99 @@
+{{>header}}
+    <div class="main-content admin-dashboard-content">
+        <section>
+            <div class="container">
+                <h1 class="green-text heading">Admin Dashboard</h1>
+                
+                <div class="container">
+                    <ul class="nav nav-tabs">
+                        <li class="active" data-target="queries-tab"><a>Queries</a></li>
+                        <li data-target="orders-tab"><a>Orders</a></li>
+                        <li data-target="stock-tab"><a>Stock</a></li>
+                        <li data-target="add-stock-tab"><a>Add Stock</a></li>
+                        <li data-target="appointments-tab"><a>Appointments</a></li>
+                    </ul>
+                    <br>
+
+                    <div class="tab-body" id="queries-tab">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Message</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messages-tbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-body" id="orders-tab">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Shipping Address</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-tbody">
+                                    
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-body" id="stock-tab">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-tbody">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-body" id="add-stock-tab">
+                        <div class="contact-form-area">
+                            <form class="contact-form">
+                                <input type="text" placeholder="Product Name" id="prod-name"/>
+
+                                <input type="number" min="0" placeholder="Quantity" id="prod-qty"/>
+
+                                <input type="number" min="0" placeholder="Price" id="prod-price"/>
+
+                                <input type="text" placeholder="Image URL" id="prod-image" />
+
+                                <button class="my-btn" type="button" id="add-in-stock-btn">Add</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="tab-body" id="appointments-tab">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Pet</th>
+                                    <th>Date/Time</th>
+                                    <th>Detail</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointments-tbody">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{{>footer}}
