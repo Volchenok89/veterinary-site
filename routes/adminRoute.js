@@ -101,6 +101,22 @@ router.post('/add-product', async (req, res) => {
     }
 });
 
+router.delete('/product/:id', async (req, res) => {
+    await Order.destroy({
+        where: {
+            product_id: req.params.id
+        }
+    });
+    await Product.destroy({
+        where: {
+            id: req.params.id
+        }
+    });
+    res.send({
+        status: "success"
+    });
+});
+
 router.get('/login', async (req, res) => {
 
     if (req.session.user) {

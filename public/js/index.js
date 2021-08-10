@@ -94,6 +94,9 @@ $(document).ready(function() {
                             <td>${product.name}</td>
                             <td>${product.price}</td>
                             <td>${product.quantity}</td>
+                            <td>
+                                <button data-product-id="${product.id}" onclick="deleteProduct(this)">Delete</button>
+                            </td>
                         </tr>
                     `);
                 });
@@ -355,4 +358,22 @@ function addToCart(btn) {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function deleteProduct(btn) {
+    let productId = $(btn).attr("data-product-id");
+    $.ajax({
+        url: "/admin/product/" + productId,
+        method: "delete",
+        dataType: "json",
+        success: (res) => {
+            if (res.status == "success") {
+                alert("Item deleted successfully!");
+                window.location.href = window.location.href;
+            }
+        },
+        error: (err) => {
+            console.log(err);
+        }
+    });
 }
