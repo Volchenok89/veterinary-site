@@ -43,19 +43,14 @@ ___
 
 (https://github.com/Volchenok89/veterinary-site)
 
-
 https://the-veterinary-clinic.herokuapp.com/
 
-![Uploading home.png…]()
+
+![home](https://user-images.githubusercontent.com/77917594/129558835-435f755c-4b27-483e-bf55-4a1d38bf39a3.png)
 ![home2](https://user-images.githubusercontent.com/77917594/128613781-b518284d-b7bc-48b4-ae91-1f8ff34e160e.png)
 ![Uploading services.png…]()
 ![typing](https://user-images.githubusercontent.com/77917594/128613786-a46f2f1e-6e5a-43d5-80f5-4c45b69a94f7.png)
 ![appointments](https://user-images.githubusercontent.com/77917594/128613788-a572e11f-d221-4782-ac75-0f4235ea01c2.png)
-
-
-
-
-
 
 ___
 
